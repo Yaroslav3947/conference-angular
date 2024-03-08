@@ -9,6 +9,7 @@ import { HomeComponent } from './features/public/home/home.component';
 import { PortfolioComponent } from './features/public/portfolio/portfolio.component';
 import { ContactUsComponent } from './features/public/contact-us/contact-us.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from './core/components/footer/footer.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     ServicesComponent,
     HomeComponent,
     PortfolioComponent,
-    ContactUsComponent
+    ContactUsComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
