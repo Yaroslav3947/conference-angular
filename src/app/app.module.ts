@@ -10,6 +10,8 @@ import { PortfolioComponent } from './features/public/portfolio/portfolio.compon
 import { ContactUsComponent } from './features/public/contact-us/contact-us.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FooterComponent } from './core/components/footer/footer.component';
+import { UnsplashService } from './features/public/service/unsplash.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -26,6 +28,7 @@ import { FooterComponent } from './core/components/footer/footer.component';
     BrowserModule,
     AppRoutingModule,
     ReactiveFormsModule,
+    HttpClientModule,
     FormsModule
   ],
   providers: [
