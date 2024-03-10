@@ -7,7 +7,7 @@ import { UnsplashService } from '../service/unsplash.service';
   styleUrl: './portfolio.component.css'
 })
 
-export class HomeComponent {
+export class PortfolioComponent {
   photos: any[] = [];
 
   constructor(private unsplashService: UnsplashService) {
