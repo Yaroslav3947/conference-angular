@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { TicketmasterService } from '../service/ticketmaster.service';
 import { EventResponse } from '../models/event-response';
-import { Observable } from 'rxjs';
+import { Observable, catchError, map } from 'rxjs';
 
 @Component({
   selector: 'app-services',
@@ -10,7 +10,7 @@ import { Observable } from 'rxjs';
 })
 export class ServicesComponent {
 
-  events$: EventResponse[] = [];
+  events$?: Observable<EventResponse[]>;
 
   constructor(private ticketmasterService: TicketmasterService) {
     this.getEvents();
@@ -18,14 +18,12 @@ export class ServicesComponent {
 
 
   getEvents(): void {
-    this.ticketmasterService.getEvents().subscribe(
-      (response) => {
-        console.log(response)
-        this.events$ = this.mapToEventResponse(response._embedded.events);
-      },
-      (error) => {
+    this.events$ = this.ticketmasterService.getEvents().pipe(
+      map(response => this.mapToEventResponse(response._embedded.events)),
+      catchError(error => {
         console.error('Error fetching events:', error);
-      }
+        throw error;
+      })
     );
   }
 
