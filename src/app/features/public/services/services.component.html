@@ -1,22 +1,35 @@
 <div class="container">
-    <div class="mt-5">
+    <div class="mb-5 mb-5">
         <div class="row align-items-strech">
             <ng-container *ngIf="events$ | async as events">
                 <div class="col-12 col-md-4 mb-3" *ngFor="let event of events">
                     <div class="card h-100">
                         <img [src]="event.image" class="card img-top" [alt]="event.name">
                         <div class="card-body d-flex flex-column">
-                            <h5 class="card-name">
+                            
+                            <ng-container *ngIf="event.priceRangeMin !== null && event.priceRangeMax !== null">
+                                <h4>${{ event.priceRangeMin }} - ${{ event.priceRangeMax }}</h4>
+                            </ng-container>
+                            
+                            <ng-container *ngIf="event.priceRangeMin === null || event.priceRangeMax === null">
+                                <h4>Price is not available</h4>
+                            </ng-container>
+                        
+                            <h5 class="name">
                                 {{event.name}}
                             </h5>
-                            <p class="card-text">
+
+                            <p>{{ event.date | date: 'medium' }}</p>
+
+                            <p class="text">
                                 {{event.description}}
                             </p>
-                            <!-- <span class="d-flex align-items-end" style="flex: 1">
-                                <a #href="event.url" class="btn btn-primary">
-                                    Read More
+
+                            <span>
+                                <a [href]="event.url" class="btn btn-buy">
+                                    Buy ticket
                                 </a>
-                            </span> -->
+                            </span>
                         </div>
                     </div>
                 </div>
