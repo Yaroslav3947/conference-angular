@@ -6,7 +6,7 @@ import { ContactUsRequest } from '../models/contact-us-request';
   templateUrl: './contact-us.component.html',
   styleUrl: './contact-us.component.css'
 })
-export class ContactUsComponent implements OnInit {
+export class ContactUsComponent {
 
   model: ContactUsRequest;
 
@@ -18,8 +18,6 @@ export class ContactUsComponent implements OnInit {
     }
   }
 
-  ngOnInit() {
-  }
 
   onFormSubmit() {
     console.log(this.model)

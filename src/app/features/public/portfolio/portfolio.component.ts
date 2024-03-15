@@ -12,8 +12,6 @@ export class PortfolioComponent {
 
   constructor(private unsplashService: UnsplashService) {
     this.getPhotos('conference,speaker', 1, 50, 'relevant');
-
-    console.log(this.photos);
   }
 
   getPhotos(query: string, page: number, perPage: number, orderBy: string): void {
