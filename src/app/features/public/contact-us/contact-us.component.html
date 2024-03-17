@@ -20,7 +20,16 @@
                 <div class="mt-3">
                     <label for="comment" class="form-label">Comment</label>
                     <textarea type="text" class="form-control" id="comment" name="comment" [(ngModel)]="model.comment"></textarea>
-                </div>              
+                </div>
+                
+                <div class="message">
+                    <label for="message" class="form-label">Message</label>
+                    <select class="form-control" [(ngModel)]="model.message" name="message" id="message">
+                        <option value="good">Good site</option>
+                        <option value="normal">Normal site</option>
+                        <option value="bad">Bad site</option>
+                    </select>
+                </div>
 
                 <div class="mt-3">
                     <button type="submit" class="btn btn-primary">Submit</button>

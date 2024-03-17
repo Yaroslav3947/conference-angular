@@ -7,14 +7,15 @@ import { ContactUsRequest } from '../models/contact-us-request';
   styleUrl: './contact-us.component.css'
 })
 export class ContactUsComponent {
-
+  selectedMessage?: string;
   model: ContactUsRequest;
 
   constructor() {
     this.model = {
       name: '',
       email: '',
-      comment: ''
+      comment: '',
+      message: ''
     }
   }
 
