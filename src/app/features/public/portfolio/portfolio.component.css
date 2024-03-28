@@ -1,0 +1,26 @@
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+.photo-gallery {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 50px 0;
+}
+
+.photo {
+    flex: 0 0 calc(33.333% - 20px);
+    margin: 0 10px 20px;
+}
+
+.photo img {
+    width: 100%;
+    height: auto;
+}
+
+.photo p {
+    margin-top: 10px;
+    font-size: 16px;
+}
