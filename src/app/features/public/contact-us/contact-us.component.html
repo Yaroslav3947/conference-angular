@@ -1,29 +1,29 @@
 <div class="container">
-    <div class="mt-5">
-        <div class="col-11 col-md-6 col-lg-4 mx-auto">
+    <div class="contact-section">
+        <div class="form-container">
             <h1>Contact us!</h1>
 
             <form #form="ngForm" (ngSubmit)="onFormSubmit()">
                 
-                <div class="mt-3">
-                    <label for="name" class="form-label">Name</label>
-                    <input type="name" class="form-control" id="name" name="name"
-                    [(ngModel)]="model.name">
+                <div class="form-group">
+                    <label for="name">Name</label>
+                    <input type="text" class="form-control" id="name" name="name"
+                    [(ngModel)]="model.name" required>
                 </div>
 
-                <div class="mt-3">
-                    <label for="email" class="form-label">Email</label>
+                <div class="form-group">
+                    <label for="email">Email</label>
                     <input type="email" class="form-control" id="email" name="email"
-                    [(ngModel)]="model.email">
+                    [(ngModel)]="model.email" required>
                 </div>
                 
-                <div class="mt-3">
-                    <label for="comment" class="form-label">Comment</label>
-                    <textarea type="text" class="form-control" id="comment" name="comment" [(ngModel)]="model.comment"></textarea>
+                <div class="form-group">
+                    <label for="comment">Comment</label>
+                    <textarea class="form-control" id="comment" name="comment" [(ngModel)]="model.comment" required></textarea>
                 </div>
                 
-                <div class="message">
-                    <label for="message" class="form-label">Message</label>
+                <div class="form-group">
+                    <label for="message">Message</label>
                     <select class="form-control" [(ngModel)]="model.message" name="message" id="message">
                         <option value="good">Good site</option>
                         <option value="normal">Normal site</option>
@@ -31,7 +31,13 @@
                     </select>
                 </div>
 
-                <div class="mt-3">
+                <div class="form-group">
+                    <label>Send Report via Email?</label><br>
+                    <input type="radio" name="sendReport" [(ngModel)]="model.sendReport" [value]="true"> Send<br>
+                    <input type="radio" name="sendReport" [(ngModel)]="model.sendReport" [value]="false"> Do not send
+                </div>
+
+                <div class="form-group">
                     <button type="submit" class="btn btn-primary">Submit</button>
                 </div>
             </form>
