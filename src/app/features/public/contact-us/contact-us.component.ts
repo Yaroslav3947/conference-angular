@@ -15,7 +15,8 @@ export class ContactUsComponent {
       name: '',
       email: '',
       comment: '',
-      message: ''
+      message: '',
+      sendReport: false
     }
   }
 

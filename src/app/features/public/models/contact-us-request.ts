@@ -3,4 +3,5 @@ export interface ContactUsRequest {
     email: string;
     comment: string;
     message: string;
+    sendReport: boolean;
 }
